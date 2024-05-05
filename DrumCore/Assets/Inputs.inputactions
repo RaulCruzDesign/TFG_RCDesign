@@ -1,0 +1,302 @@
+{
+    "name": "Inputs",
+    "maps": [
+        {
+            "name": "Navegation",
+            "id": "667f7f2d-b419-4a90-a3c4-0f514a20b474",
+            "actions": [
+                {
+                    "name": "Up",
+                    "type": "Value",
+                    "id": "541d3c36-a0fd-46cd-842b-9353ee823bf7",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Down",
+                    "type": "Value",
+                    "id": "1891f4c8-d9a9-4e09-a4ae-2fa7109fac44",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Select",
+                    "type": "Value",
+                    "id": "52f195b1-5f59-4434-9697-7bcd82c19299",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Back",
+                    "type": "Value",
+                    "id": "ea2c56a9-d0ce-4e8c-8c2b-b9742c63f611",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fcc854b1-70f9-450f-a9c0-43ff907416c5",
+                    "path": "<MidiDevice>/note046",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e9c1b24a-8be3-4751-943c-606ac89dd4d5",
+                    "path": "<MidiDevice>/note048",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a670dec4-127a-40e5-8030-d40ba37611b5",
+                    "path": "<MidiDevice>/note038",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "976221fe-1917-4470-ae68-fd29896b8795",
+                    "path": "<MidiDevice>/note036",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Drum Config",
+            "id": "8156762e-b1c8-4422-af3e-86eb118cfb41",
+            "actions": [
+                {
+                    "name": "HitHat_Open",
+                    "type": "Value",
+                    "id": "39d205d5-af9d-4257-a4fa-79eb2a31028e",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "HitHat_Close",
+                    "type": "Button",
+                    "id": "dc64c3b7-85e0-4282-8703-96e8dd38ee54",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hit Pedal",
+                    "type": "Value",
+                    "id": "04dcc514-4598-48e6-9805-09a6956eeab4",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Kick",
+                    "type": "Value",
+                    "id": "3ab63b41-800c-48a8-918b-c5424516f509",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Snare",
+                    "type": "Value",
+                    "id": "c1b13e4c-95d9-442d-9c38-49883f1ca244",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Tom1",
+                    "type": "Value",
+                    "id": "a7732476-3efa-4f82-9355-d5f1da71ec2c",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Tom2",
+                    "type": "Value",
+                    "id": "a7af096c-9bd5-4c04-ac93-a729ff7c48ed",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Tom3",
+                    "type": "Value",
+                    "id": "2da374f3-c94e-4a4d-8515-667217d71fc6",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Crash",
+                    "type": "Value",
+                    "id": "280a16bb-166a-418e-b0c4-400e2f51812b",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Ride",
+                    "type": "Value",
+                    "id": "117f3818-3c9c-4865-a32b-fad94d39b6ce",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "68062491-2806-4bde-bad2-081a4057e912",
+                    "path": "<MidiDevice>/note046",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HitHat_Open",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b3ccb27f-705c-485a-8d76-b24b6ba04677",
+                    "path": "<MidiDevice>/note044",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hit Pedal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cd4db477-20c0-4b8b-9236-9fc05e2ba586",
+                    "path": "<MidiDevice>/note036",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Kick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "58c667c8-b870-4b4d-bc25-09ba130fa9a7",
+                    "path": "<MidiDevice>/note038",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Snare",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "27ed30ba-6a8e-42b6-b53d-0f16a13f7af2",
+                    "path": "<MidiDevice>/note048",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tom1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0fb3094b-9923-4650-bf3c-af4f5969c48e",
+                    "path": "<MidiDevice>/note045",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tom2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b548f7a7-6b19-4663-83f9-4a96851a9da8",
+                    "path": "<MidiDevice>/note043",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tom3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5255acde-8db8-4914-9f28-86ce6086f753",
+                    "path": "<MidiDevice>/note049",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a8bc2f94-8646-47e7-8a64-6267064c1fa8",
+                    "path": "<MidiDevice>/note051",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ride",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "61b2fd5d-4ff0-4102-af59-5fe685e160bc",
+                    "path": "<MidiDevice>/note042",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HitHat_Close",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
