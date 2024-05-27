@@ -11,7 +11,6 @@ public class Metronomo : MonoBehaviour
     private AudioSource audioSource;
     private float nextBeatTime;
     private float beatTime;
-    private SpawnController spawnController;
 
     void Start()
     {
@@ -19,21 +18,12 @@ public class Metronomo : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = metronomeSound;
         audioSource.volume = volume;
-        spawnController = FindObjectOfType<SpawnController>(); // Encontrar el SpawnController en la escena
 
         // Calcular el tiempo de un beat en segundos
         beatTime = 60f / bpm;
 
-        // Obtener el tiempo del primer beat section con el retraso aplicado
-        if (spawnController != null && spawnController.beatSections.Count > 0)
-        {
-            float firstSectionTime = beatTime / spawnController.beatSections[0].sectionsPerBeat;
-            nextBeatTime = Time.time + firstSectionTime + metronomeDelay; // Iniciar el tiempo del próximo pulso con el retraso
-        }
-        else
-        {
-            nextBeatTime = Time.time + metronomeDelay; // Si no hay beat sections, iniciar el tiempo de inmediato con el retraso
-        }
+        // Obtener el tiempo del primer beat con el retraso aplicado
+        nextBeatTime = Time.time + beatTime + metronomeDelay; // Iniciar el tiempo del próximo pulso con el retraso
     }
 
     void Update()

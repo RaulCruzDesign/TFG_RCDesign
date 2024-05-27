@@ -17,6 +17,19 @@ public class RailActivation : MonoBehaviour
 
     public ScoreRange[] scoreRanges; // Rangos de distancia y puntajes
 
+    void Awake()
+    {
+        if (selectedPrefabs == null)
+        {
+            selectedPrefabs = new List<GameObject>();
+        }
+
+        if (scoreMaster == null)
+        {
+            scoreMaster = FindObjectOfType<ScoreMaster>();
+        }
+    }
+
     // Método para manejar el evento de Player Input "HitHat_Close_Activation"
     public void OnActivation()
     {
@@ -35,20 +48,24 @@ public class RailActivation : MonoBehaviour
         GameObject[] allPrefabs = GameObject.FindGameObjectsWithTag("Prefab");
         float closestDistance = Mathf.Infinity;
 
+        List<GameObject> closestPrefabs = new List<GameObject>();
+
         foreach (GameObject prefab in allPrefabs)
         {
             float distance = Mathf.Abs(prefab.transform.position.z);
             if (distance < closestDistance)
             {
                 closestDistance = distance;
-                selectedPrefabs.Clear(); // Limpiar la lista de prefabs seleccionados anteriores
-                selectedPrefabs.Add(prefab); // Agregar el nuevo prefab más cercano
+                closestPrefabs.Clear(); // Limpiar la lista de prefabs seleccionados anteriores
+                closestPrefabs.Add(prefab); // Agregar el nuevo prefab más cercano
             }
             else if (distance == closestDistance)
             {
-                selectedPrefabs.Add(prefab); // Agregar otro prefab con la misma distancia
+                closestPrefabs.Add(prefab); // Agregar otro prefab con la misma distancia
             }
         }
+
+        selectedPrefabs = closestPrefabs;
     }
 
     // Método para realizar un input, calcular la distancia de tiempo y otorgar una puntuación

@@ -6,61 +6,89 @@ public class SpawnController : MonoBehaviour
 {
     public float bpm = 120f; // BPM de la música
     public List<SpawnPoint> spawnPoints; // Lista de spawn points
+    public TextAsset notesFile; // Archivo de notas asignado desde el editor
 
-    // Estructura para mapear SpawnPoints a secciones en un beat
-    [System.Serializable]
-    public class BeatSection
-    {
-        public List<int> spawnPointIndices = new List<int>(); // Índices de los SpawnPoints en esta sección
-        public int sectionsPerBeat = 4; // Número de secciones por beat
-    }
-
-    public List<BeatSection> beatSections = new List<BeatSection>(); // Lista de secciones por beat
+    private List<int[]> noteDataList = new List<int[]>(); // Lista de datos de notas
+    private float secondsPerBeat; // Segundos por beat
+    private float secondsPerSubdivision; // Segundos por subdivisión de beat
 
     void Start()
     {
-        // Activar los spawn points en los tiempos especificados
-        StartCoroutine(ActivateSpawnPoints());
+        // Calcular los segundos por beat basado en el BPM
+        secondsPerBeat = 60f / bpm;
+        // Calcular los segundos por subdivisión de beat (16 subdivisiones por beat)
+        secondsPerSubdivision = secondsPerBeat / 16f;
+
+        // Inicializar la lista de spawn points
+        if (spawnPoints == null)
+        {
+            Debug.LogWarning("Lista de spawn points no asignada. Asigne manualmente los spawn points en el inspector.");
+            return;
+        }
+
+        LoadNotes();
+        StartCoroutine(PlayNotesInLoop());
     }
 
-    IEnumerator ActivateSpawnPoints()
+    void LoadNotes()
     {
-        // Calcular el tiempo de un beat en segundos
-        float beatTime = 60f / bpm;
+        if (notesFile == null || string.IsNullOrEmpty(notesFile.text))
+        {
+            Debug.LogWarning("No se ha asignado ningún archivo de notas o el archivo está vacío.");
+            return;
+        }
 
-        // Bucle infinito para reproducir las secciones de beats
+        string[] lines = notesFile.text.Split('\n');
+
+        foreach (string line in lines)
+        {
+            string[] parts = line.Trim().Split(',');
+
+            List<int> spawnPointIndices = new List<int>();
+            foreach (string part in parts)
+            {
+                int spawnPointIndex;
+                if (int.TryParse(part, out spawnPointIndex))
+                {
+                    spawnPointIndices.Add(spawnPointIndex);
+                }
+                else
+                {
+                    Debug.LogWarning($"Error al analizar el índice de spawn point en la línea: {line}");
+                }
+            }
+
+            noteDataList.Add(spawnPointIndices.ToArray());
+        }
+    }
+
+    IEnumerator PlayNotesInLoop()
+    {
         while (true)
         {
-            // Recorrer la lista de secciones por beat
-            foreach (BeatSection beatSection in beatSections)
+            foreach (int[] spawnPointIndices in noteDataList)
             {
-                // Lista para almacenar las corrutinas de activación de las notas simultáneas
-                List<Coroutine> noteCoroutines = new List<Coroutine>();
-
-                // Recorrer los SpawnPoints en esta sección
-                foreach (int spawnPointIndex in beatSection.spawnPointIndices)
+                foreach (int spawnPointIndex in spawnPointIndices)
                 {
-                    // Verificar si el índice del SpawnPoint está dentro del rango
                     if (spawnPointIndex < 0 || spawnPointIndex >= spawnPoints.Count)
                     {
-                        Debug.LogWarning("El índice del SpawnPoint está fuera de rango.");
+                        Debug.LogWarning($"Índice de spawn point fuera de rango: {spawnPointIndex}");
                         continue;
                     }
 
-                    // Obtener el SpawnPoint correspondiente
                     SpawnPoint spawnPoint = spawnPoints[spawnPointIndex];
-
-                    // Llamar al método Activate en el SpawnPoint
-                    Coroutine coroutine = StartCoroutine(spawnPoint.Activate());
-
-                    // Agregar la corrutina a la lista
-                    noteCoroutines.Add(coroutine);
+                    StartCoroutine(ActivateSpawnPoint(spawnPoint));
                 }
 
-                // Esperar la duración de cada sección de beat
-                float sectionTime = beatTime / beatSection.sectionsPerBeat;
-                yield return new WaitForSeconds(sectionTime);
+                // Espera la mitad del tiempo entre beats para las secciones de 16 notas
+                yield return new WaitForSeconds(secondsPerBeat / 2);
             }
         }
     }
+
+    IEnumerator ActivateSpawnPoint(SpawnPoint spawnPoint)
+    {
+        yield return spawnPoint.Activate();
+    }
 }
+
