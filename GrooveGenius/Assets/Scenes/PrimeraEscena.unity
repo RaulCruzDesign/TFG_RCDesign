@@ -155,6 +155,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: 88971570ad5814049aab2d639216559d,
     type: 3}
   timeToReachZ0: 5
+  railActivation: {fileID: 0}
 --- !u!4 &214715519
 Transform:
   m_ObjectHideFlags: 0
@@ -333,6 +334,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: 035af6d393f25ef4a92b396aa2f4d736,
     type: 3}
   timeToReachZ0: 5
+  railActivation: {fileID: 0}
 --- !u!4 &238681549
 Transform:
   m_ObjectHideFlags: 0
@@ -486,6 +488,7 @@ MonoBehaviour:
   - {fileID: 551334890405741618, guid: e32f751864c7f294696aa406876559b9, type: 3}
   - {fileID: 551334890405741618, guid: 3c49e0cf4dcd8a64e8c737c52e3f2348, type: 3}
   scoreMaster: {fileID: 761751407}
+  isAutoMode: 1
   scoreRanges:
   - minDistance: -1
     maxDistance: 1
@@ -537,6 +540,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 4918507930379336555, guid: bf75466ff0510034281dfadb70c94abe,
     type: 3}
   timeToReachZ0: 5
+  railActivation: {fileID: 0}
 --- !u!4 &407327635
 Transform:
   m_ObjectHideFlags: 0
@@ -745,6 +749,7 @@ MonoBehaviour:
   - {fileID: 551334890405741618, guid: 8ec7efb9b51da6c46b0a526570450797, type: 3}
   - {fileID: 551334890405741618, guid: 035af6d393f25ef4a92b396aa2f4d736, type: 3}
   scoreMaster: {fileID: 761751407}
+  isAutoMode: 1
   scoreRanges:
   - minDistance: -1
     maxDistance: 1
@@ -793,6 +798,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: f4af8debebccb9540a1fa5580d42d6a6,
     type: 3}
   timeToReachZ0: 5
+  railActivation: {fileID: 0}
 --- !u!4 &1161904073
 Transform:
   m_ObjectHideFlags: 0
@@ -854,6 +860,7 @@ MonoBehaviour:
   - {fileID: 551334890405741618, guid: f4af8debebccb9540a1fa5580d42d6a6, type: 3}
   - {fileID: 551334890405741618, guid: 88971570ad5814049aab2d639216559d, type: 3}
   scoreMaster: {fileID: 761751407}
+  isAutoMode: 1
   scoreRanges:
   - minDistance: -1
     maxDistance: 1
@@ -905,6 +912,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: 265d0ff7d17a68548b35a47231c535a0,
     type: 3}
   timeToReachZ0: 5
+  railActivation: {fileID: 0}
 --- !u!4 &1354156691
 Transform:
   m_ObjectHideFlags: 0
@@ -1046,6 +1054,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: 8ec7efb9b51da6c46b0a526570450797,
     type: 3}
   timeToReachZ0: 5
+  railActivation: {fileID: 0}
 --- !u!4 &1661219852
 Transform:
   m_ObjectHideFlags: 0
@@ -1093,6 +1102,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: ddbeef3e555b0b940a2481e8038e5376,
     type: 3}
   timeToReachZ0: 5
+  railActivation: {fileID: 0}
 --- !u!4 &1670443199
 Transform:
   m_ObjectHideFlags: 0
@@ -1245,6 +1255,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: e32f751864c7f294696aa406876559b9,
     type: 3}
   timeToReachZ0: 5
+  railActivation: {fileID: 0}
 --- !u!4 &1775121168
 Transform:
   m_ObjectHideFlags: 0
@@ -1292,6 +1303,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: 3c49e0cf4dcd8a64e8c737c52e3f2348,
     type: 3}
   timeToReachZ0: 5
+  railActivation: {fileID: 0}
 --- !u!4 &1791552825
 Transform:
   m_ObjectHideFlags: 0
@@ -1353,6 +1365,7 @@ MonoBehaviour:
   - {fileID: 551334890405741618, guid: 265d0ff7d17a68548b35a47231c535a0, type: 3}
   - {fileID: 551334890405741618, guid: ddbeef3e555b0b940a2481e8038e5376, type: 3}
   scoreMaster: {fileID: 761751407}
+  isAutoMode: 1
   scoreRanges:
   - minDistance: -1
     maxDistance: 1

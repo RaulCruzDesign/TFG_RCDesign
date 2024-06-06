@@ -5,6 +5,15 @@ public class SpawnPoint : MonoBehaviour
 {
     public GameObject prefabToSpawn; // Prefab que será instanciado
     public float timeToReachZ0 = 5f; // Tiempo en segundos que tarda el prefab en llegar a Z=0
+    public RailActivation railActivation; // Referencia al script RailActivation
+
+    void Start()
+    {
+        if (railActivation == null)
+        {
+            railActivation = FindObjectOfType<RailActivation>();
+        }
+    }
 
     public IEnumerator Activate()
     {
@@ -25,6 +34,11 @@ public class SpawnPoint : MonoBehaviour
                 spawnedPrefab.transform.position = Vector3.MoveTowards(spawnedPrefab.transform.position, new Vector3(transform.position.x, transform.position.y, 0f), step);
             }
             yield return null;
+        }
+
+        if (spawnedPrefab != null && railActivation.isAutoMode && Mathf.Approximately(spawnedPrefab.transform.position.z, 0f))
+        {
+            railActivation.AutoActivatePrefab(spawnedPrefab);
         }
 
         while (spawnedPrefab != null && spawnedPrefab.transform.position.z > -2)

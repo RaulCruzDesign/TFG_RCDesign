@@ -6,6 +6,7 @@ public class RailActivation : MonoBehaviour
 {
     public List<GameObject> selectedPrefabs; // Lista de prefabs seleccionados
     public ScoreMaster scoreMaster; // Referencia al script ScoreMaster
+    public bool isAutoMode; // Modo automático activado
 
     [System.Serializable]
     public class ScoreRange
@@ -33,12 +34,15 @@ public class RailActivation : MonoBehaviour
     // Método para manejar el evento de Player Input "HitHat_Close_Activation"
     public void OnActivation()
     {
-        Debug.Log("Hit");
-        // Actualizar los prefabs seleccionados más cercanos
-        UpdateSelectedPrefabs();
+        if (!isAutoMode)
+        {
+            Debug.Log("Hit");
+            // Actualizar los prefabs seleccionados más cercanos
+            UpdateSelectedPrefabs();
 
-        // Realizar el input y calcular la puntuación
-        PerformInputAndCalculateScore();
+            // Realizar el input y calcular la puntuación
+            PerformInputAndCalculateScore();
+        }
     }
 
     // Método para actualizar los prefabs seleccionados
@@ -103,5 +107,20 @@ public class RailActivation : MonoBehaviour
         }
 
         return 0; // Devolver 0 si no se encuentra ningún rango válido
+    }
+
+    // Método para activar automáticamente los prefabs en el modo automático
+    public void AutoActivatePrefab(GameObject prefab)
+    {
+        float distance = Mathf.Abs(prefab.transform.position.z);
+        int score = CalculateScore(distance);
+        Debug.Log("Puntuación automática: " + score);
+
+        if (score > 0)
+        {
+            Destroy(prefab);
+        }
+
+        scoreMaster.UpdateScore(score);
     }
 }
