@@ -155,7 +155,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: 88971570ad5814049aab2d639216559d,
     type: 3}
   timeToReachZ0: 5
-  railActivation: {fileID: 0}
+  railActivation: {fileID: 1335853900}
 --- !u!4 &214715519
 Transform:
   m_ObjectHideFlags: 0
@@ -301,7 +301,7 @@ MonoBehaviour:
   - {fileID: 1161904072}
   - {fileID: 1670443198}
   - {fileID: 1354156690}
-  notesFile: {fileID: 4900000, guid: ec84fd91f1e5fc243a3d0f295e4b531c, type: 3}
+  notesFile: {fileID: 4900000, guid: 9b195e7c6d55b644e8a2b724520c3360, type: 3}
 --- !u!1 &238681547
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +334,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: 035af6d393f25ef4a92b396aa2f4d736,
     type: 3}
   timeToReachZ0: 5
-  railActivation: {fileID: 0}
+  railActivation: {fileID: 1140959240}
 --- !u!4 &238681549
 Transform:
   m_ObjectHideFlags: 0
@@ -487,8 +487,14 @@ MonoBehaviour:
   selectedPrefabs:
   - {fileID: 551334890405741618, guid: e32f751864c7f294696aa406876559b9, type: 3}
   - {fileID: 551334890405741618, guid: 3c49e0cf4dcd8a64e8c737c52e3f2348, type: 3}
+  - {fileID: 4918507930379336555, guid: bf75466ff0510034281dfadb70c94abe, type: 3}
+  sounds:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 50d9441f51335f242929fcd9eb0664e3, type: 3}
+  - {fileID: 0}
   scoreMaster: {fileID: 761751407}
   isAutoMode: 1
+  audioSource: {fileID: 0}
   scoreRanges:
   - minDistance: -1
     maxDistance: 1
@@ -540,7 +546,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 4918507930379336555, guid: bf75466ff0510034281dfadb70c94abe,
     type: 3}
   timeToReachZ0: 5
-  railActivation: {fileID: 0}
+  railActivation: {fileID: 313594701}
 --- !u!4 &407327635
 Transform:
   m_ObjectHideFlags: 0
@@ -748,12 +754,22 @@ MonoBehaviour:
   selectedPrefabs:
   - {fileID: 551334890405741618, guid: 8ec7efb9b51da6c46b0a526570450797, type: 3}
   - {fileID: 551334890405741618, guid: 035af6d393f25ef4a92b396aa2f4d736, type: 3}
+  sounds:
+  - {fileID: 8300000, guid: 643499fa5462bb04998f56c405bf0a30, type: 3}
+  - {fileID: 8300000, guid: 39ffc98fdbed3e841adfea42c3ad509c, type: 3}
   scoreMaster: {fileID: 761751407}
   isAutoMode: 1
+  audioSource: {fileID: 1272305930}
   scoreRanges:
   - minDistance: -1
     maxDistance: 1
     score: 500
+  - minDistance: -1.5
+    maxDistance: 1.5
+    score: 200
+  - minDistance: -2
+    maxDistance: 2
+    score: 50
 --- !u!114 &1140959241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,7 +814,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: f4af8debebccb9540a1fa5580d42d6a6,
     type: 3}
   timeToReachZ0: 5
-  railActivation: {fileID: 0}
+  railActivation: {fileID: 1335853900}
 --- !u!4 &1161904073
 Transform:
   m_ObjectHideFlags: 0
@@ -809,6 +825,134 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.625, y: 0.5, z: 50}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1272305929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1272305931}
+  - component: {fileID: 1272305930}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1272305930
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272305929}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1272305931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272305929}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -859,8 +1003,12 @@ MonoBehaviour:
   selectedPrefabs:
   - {fileID: 551334890405741618, guid: f4af8debebccb9540a1fa5580d42d6a6, type: 3}
   - {fileID: 551334890405741618, guid: 88971570ad5814049aab2d639216559d, type: 3}
+  sounds:
+  - {fileID: 8300000, guid: 2b21e89db01f143448f62ee48c294f3a, type: 3}
+  - {fileID: 0}
   scoreMaster: {fileID: 761751407}
   isAutoMode: 1
+  audioSource: {fileID: 0}
   scoreRanges:
   - minDistance: -1
     maxDistance: 1
@@ -912,7 +1060,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: 265d0ff7d17a68548b35a47231c535a0,
     type: 3}
   timeToReachZ0: 5
-  railActivation: {fileID: 0}
+  railActivation: {fileID: 1810493393}
 --- !u!4 &1354156691
 Transform:
   m_ObjectHideFlags: 0
@@ -1054,7 +1202,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: 8ec7efb9b51da6c46b0a526570450797,
     type: 3}
   timeToReachZ0: 5
-  railActivation: {fileID: 0}
+  railActivation: {fileID: 1140959240}
 --- !u!4 &1661219852
 Transform:
   m_ObjectHideFlags: 0
@@ -1102,7 +1250,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: ddbeef3e555b0b940a2481e8038e5376,
     type: 3}
   timeToReachZ0: 5
-  railActivation: {fileID: 0}
+  railActivation: {fileID: 1810493393}
 --- !u!4 &1670443199
 Transform:
   m_ObjectHideFlags: 0
@@ -1255,7 +1403,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: e32f751864c7f294696aa406876559b9,
     type: 3}
   timeToReachZ0: 5
-  railActivation: {fileID: 0}
+  railActivation: {fileID: 313594701}
 --- !u!4 &1775121168
 Transform:
   m_ObjectHideFlags: 0
@@ -1303,7 +1451,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 551334890405741618, guid: 3c49e0cf4dcd8a64e8c737c52e3f2348,
     type: 3}
   timeToReachZ0: 5
-  railActivation: {fileID: 0}
+  railActivation: {fileID: 313594701}
 --- !u!4 &1791552825
 Transform:
   m_ObjectHideFlags: 0
@@ -1364,8 +1512,12 @@ MonoBehaviour:
   selectedPrefabs:
   - {fileID: 551334890405741618, guid: 265d0ff7d17a68548b35a47231c535a0, type: 3}
   - {fileID: 551334890405741618, guid: ddbeef3e555b0b940a2481e8038e5376, type: 3}
+  sounds:
+  - {fileID: 0}
+  - {fileID: 0}
   scoreMaster: {fileID: 761751407}
   isAutoMode: 1
+  audioSource: {fileID: 0}
   scoreRanges:
   - minDistance: -1
     maxDistance: 1
@@ -1562,3 +1714,4 @@ SceneRoots:
   - {fileID: 1335853901}
   - {fileID: 1810493394}
   - {fileID: 761751406}
+  - {fileID: 1272305931}

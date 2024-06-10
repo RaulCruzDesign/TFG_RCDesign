@@ -3,7 +3,8 @@ guid: 1bce04bfd932041408f6749408a95fb5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - metronomeSound: {fileID: 8300000, guid: 32c572b034fa3b8438655c01ffd995dc, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

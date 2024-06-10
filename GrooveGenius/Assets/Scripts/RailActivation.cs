@@ -5,8 +5,10 @@ using System.Collections.Generic;
 public class RailActivation : MonoBehaviour
 {
     public List<GameObject> selectedPrefabs; // Lista de prefabs seleccionados
+    public List<AudioClip> sounds; // Lista de sonidos correspondientes a los prefabs
     public ScoreMaster scoreMaster; // Referencia al script ScoreMaster
     public bool isAutoMode; // Modo automático activado
+    public AudioSource audioSource; // Fuente de audio para reproducir los sonidos
 
     [System.Serializable]
     public class ScoreRange
@@ -28,6 +30,11 @@ public class RailActivation : MonoBehaviour
         if (scoreMaster == null)
         {
             scoreMaster = FindObjectOfType<ScoreMaster>();
+        }
+
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
         }
     }
 
@@ -85,6 +92,12 @@ public class RailActivation : MonoBehaviour
 
             if (score > 0)
             {
+                int index = selectedPrefabs.IndexOf(selectedPrefab);
+                if (index >= 0 && index < sounds.Count)
+                {
+                    PlaySound(sounds[index]);
+                }
+
                 Destroy(selectedPrefab);
             }
 
@@ -118,9 +131,21 @@ public class RailActivation : MonoBehaviour
 
         if (score > 0)
         {
+            int index = selectedPrefabs.IndexOf(prefab);
+            if (index >= 0 && index < sounds.Count)
+            {
+                PlaySound(sounds[index]);
+            }
+
             Destroy(prefab);
         }
 
         scoreMaster.UpdateScore(score);
+    }
+
+    // Método para reproducir un sonido
+    private void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }
