@@ -56,12 +56,56 @@
                 },
                 {
                     "name": "",
+                    "id": "603491b0-f722-4c9f-8f3c-8407fc37354b",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e9c1b24a-8be3-4751-943c-606ac89dd4d5",
                     "path": "<MidiDevice>/note048",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d73e9055-eec7-4882-afc7-55a0bdc849d5",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "976221fe-1917-4470-ae68-fd29896b8795",
+                    "path": "<MidiDevice>/note036",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c73f1def-35d7-42bf-99a8-f4405230751c",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Back",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -78,12 +122,12 @@
                 },
                 {
                     "name": "",
-                    "id": "976221fe-1917-4470-ae68-fd29896b8795",
-                    "path": "<MidiDevice>/note036",
+                    "id": "8e057cb7-ccc9-4660-981b-187033d8f356",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Back",
+                    "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
