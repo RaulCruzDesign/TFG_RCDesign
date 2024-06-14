@@ -123,6 +123,74 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &34784468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34784471}
+  - component: {fileID: 34784470}
+  - component: {fileID: 34784469}
+  m_Layer: 0
+  m_Name: Rail 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &34784469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34784468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab0db0787e40c048a2bbf16be7a0679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &34784470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34784468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a2e169c1a51d041b6807c74c8f8408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedPrefab1: {fileID: 407327633}
+  selectedPrefab2: {fileID: 0}
+  sound1: {fileID: 0}
+  sound2: {fileID: 0}
+  scoreMaster: {fileID: 761751407}
+  isAutoMode: 0
+  audioSource: {fileID: 1272305930}
+  scoreRanges:
+  - minDistance: -1
+    maxDistance: 1
+    score: 500
+--- !u!4 &34784471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34784468}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &214715517
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,17 +552,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a2e169c1a51d041b6807c74c8f8408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedPrefabs:
-  - {fileID: 551334890405741618, guid: e32f751864c7f294696aa406876559b9, type: 3}
-  - {fileID: 551334890405741618, guid: 3c49e0cf4dcd8a64e8c737c52e3f2348, type: 3}
-  - {fileID: 4918507930379336555, guid: bf75466ff0510034281dfadb70c94abe, type: 3}
-  sounds:
-  - {fileID: 0}
-  - {fileID: 8300000, guid: 50d9441f51335f242929fcd9eb0664e3, type: 3}
-  - {fileID: 0}
+  selectedPrefab1: {fileID: 1775121166}
+  selectedPrefab2: {fileID: 1791552823}
+  sound1: {fileID: 0}
+  sound2: {fileID: 8300000, guid: 2b21e89db01f143448f62ee48c294f3a, type: 3}
   scoreMaster: {fileID: 761751407}
-  isAutoMode: 1
-  audioSource: {fileID: 0}
+  isAutoMode: 0
+  audioSource: {fileID: 1272305930}
   scoreRanges:
   - minDistance: -1
     maxDistance: 1
@@ -546,7 +610,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 4918507930379336555, guid: bf75466ff0510034281dfadb70c94abe,
     type: 3}
   timeToReachZ0: 5
-  railActivation: {fileID: 313594701}
+  railActivation: {fileID: 34784470}
 --- !u!4 &407327635
 Transform:
   m_ObjectHideFlags: 0
@@ -598,13 +662,49 @@ MonoBehaviour:
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_DeviceRegainedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_ControlsChangedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls: []
@@ -651,39 +751,147 @@ MonoBehaviour:
     m_ActionId: 39d205d5-af9d-4257-a4fa-79eb2a31028e
     m_ActionName: Drum Config/HitHat_Open[/MidiDevice/note046]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: dc64c3b7-85e0-4282-8703-96e8dd38ee54
     m_ActionName: Drum Config/HitHat_Close[/MidiDevice/note042]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 04dcc514-4598-48e6-9805-09a6956eeab4
     m_ActionName: Drum Config/Hit Pedal[/MidiDevice/note044]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 3ab63b41-800c-48a8-918b-c5424516f509
     m_ActionName: Drum Config/Kick[/MidiDevice/note036]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: c1b13e4c-95d9-442d-9c38-49883f1ca244
     m_ActionName: Drum Config/Snare[/MidiDevice/note038]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: a7732476-3efa-4f82-9355-d5f1da71ec2c
     m_ActionName: Drum Config/Tom1[/MidiDevice/note048]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: a7af096c-9bd5-4c04-ac93-a729ff7c48ed
     m_ActionName: Drum Config/Tom2[/MidiDevice/note045]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2da374f3-c94e-4a4d-8515-667217d71fc6
     m_ActionName: Drum Config/Tom3[/MidiDevice/note043]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 280a16bb-166a-418e-b0c4-400e2f51812b
     m_ActionName: Drum Config/Crash[/MidiDevice/note049]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 117f3818-3c9c-4865-a32b-fad94d39b6ce
     m_ActionName: Drum Config/Ride[/MidiDevice/note051]
   m_NeverAutoSwitchControlSchemes: 0
@@ -763,12 +971,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a2e169c1a51d041b6807c74c8f8408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedPrefabs:
-  - {fileID: 551334890405741618, guid: 8ec7efb9b51da6c46b0a526570450797, type: 3}
-  - {fileID: 551334890405741618, guid: 035af6d393f25ef4a92b396aa2f4d736, type: 3}
-  sounds:
-  - {fileID: 8300000, guid: 643499fa5462bb04998f56c405bf0a30, type: 3}
-  - {fileID: 8300000, guid: 39ffc98fdbed3e841adfea42c3ad509c, type: 3}
+  selectedPrefab1: {fileID: 1661219850}
+  selectedPrefab2: {fileID: 238681547}
+  sound1: {fileID: 8300000, guid: 643499fa5462bb04998f56c405bf0a30, type: 3}
+  sound2: {fileID: 8300000, guid: 39ffc98fdbed3e841adfea42c3ad509c, type: 3}
   scoreMaster: {fileID: 761751407}
   isAutoMode: 1
   audioSource: {fileID: 1272305930}
@@ -982,7 +1188,7 @@ GameObject:
   - component: {fileID: 1335853900}
   - component: {fileID: 1335853899}
   m_Layer: 0
-  m_Name: Rail 2
+  m_Name: Rail 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1012,15 +1218,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a2e169c1a51d041b6807c74c8f8408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedPrefabs:
-  - {fileID: 551334890405741618, guid: f4af8debebccb9540a1fa5580d42d6a6, type: 3}
-  - {fileID: 551334890405741618, guid: 88971570ad5814049aab2d639216559d, type: 3}
-  sounds:
-  - {fileID: 8300000, guid: 2b21e89db01f143448f62ee48c294f3a, type: 3}
-  - {fileID: 0}
+  selectedPrefab1: {fileID: 1161904071}
+  selectedPrefab2: {fileID: 214715517}
+  sound1: {fileID: 0}
+  sound2: {fileID: 0}
   scoreMaster: {fileID: 761751407}
   isAutoMode: 1
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1272305930}
   scoreRanges:
   - minDistance: -1
     maxDistance: 1
@@ -1491,7 +1695,7 @@ GameObject:
   - component: {fileID: 1810493393}
   - component: {fileID: 1810493392}
   m_Layer: 0
-  m_Name: Rail 3
+  m_Name: Rail 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1521,15 +1725,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a2e169c1a51d041b6807c74c8f8408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedPrefabs:
-  - {fileID: 551334890405741618, guid: 265d0ff7d17a68548b35a47231c535a0, type: 3}
-  - {fileID: 551334890405741618, guid: ddbeef3e555b0b940a2481e8038e5376, type: 3}
-  sounds:
-  - {fileID: 0}
-  - {fileID: 0}
+  selectedPrefab1: {fileID: 1354156689}
+  selectedPrefab2: {fileID: 1670443197}
+  sound1: {fileID: 0}
+  sound2: {fileID: 0}
   scoreMaster: {fileID: 761751407}
   isAutoMode: 1
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1272305930}
   scoreRanges:
   - minDistance: -1
     maxDistance: 1
@@ -1580,7 +1782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bpm: 90
   metronomeSound: {fileID: 8300000, guid: 32c572b034fa3b8438655c01ffd995dc, type: 3}
-  volume: 1
+  volume: 0
   metronomeDelay: 5
 --- !u!4 &1906030425
 Transform:
@@ -1723,6 +1925,7 @@ SceneRoots:
   - {fileID: 1932083862}
   - {fileID: 1140959239}
   - {fileID: 313594702}
+  - {fileID: 34784471}
   - {fileID: 1335853901}
   - {fileID: 1810493394}
   - {fileID: 761751406}
