@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 public class RailActivation : MonoBehaviour
 {
-    public GameObject selectedPrefab1; // Primer prefab seleccionado
-    public GameObject selectedPrefab2; // Segundo prefab seleccionado
-    public AudioClip sound1; // Sonido correspondiente al primer prefab
-    public AudioClip sound2; // Sonido correspondiente al segundo prefab
+    public string prefabTag1; // Tag del primer tipo de prefab
+    public string prefabTag2; // Tag del segundo tipo de prefab
+    public AudioClip sound1; // Sonido correspondiente al prefab 1
+    public AudioClip sound2; // Sonido correspondiente al prefab 2
     public ScoreMaster scoreMaster; // Referencia al script ScoreMaster
     public bool isAutoMode; // Modo automático activado
     public AudioSource audioSource; // Fuente de audio para reproducir los sonidos
@@ -35,13 +35,12 @@ public class RailActivation : MonoBehaviour
         }
     }
 
-    // Método para manejar el evento de Player Input "HitHat_Close_Activation" para el primer prefab
     public void OnActivation1()
     {
         if (!isAutoMode)
         {
             Debug.Log("Hit 1");
-            UpdateSelectedPrefabs();
+            GameObject selectedPrefab1 = FindClosestPrefab(prefabTag1);
 
             if (selectedPrefab1 != null)
             {
@@ -50,13 +49,12 @@ public class RailActivation : MonoBehaviour
         }
     }
 
-    // Método para manejar el evento de Player Input "HitHat_Close_Activation" para el segundo prefab
     public void OnActivation2()
     {
         if (!isAutoMode)
         {
             Debug.Log("Hit 2");
-            UpdateSelectedPrefabs();
+            GameObject selectedPrefab2 = FindClosestPrefab(prefabTag2);
 
             if (selectedPrefab2 != null)
             {
@@ -65,37 +63,25 @@ public class RailActivation : MonoBehaviour
         }
     }
 
-    // Método para actualizar los prefabs seleccionados
-    private void UpdateSelectedPrefabs()
+    private GameObject FindClosestPrefab(string prefabTag)
     {
-        GameObject[] allPrefabs = GameObject.FindGameObjectsWithTag("Prefab");
-        float closestDistance1 = Mathf.Infinity;
-        float closestDistance2 = Mathf.Infinity;
-
-        selectedPrefab1 = null;
-        selectedPrefab2 = null;
+        GameObject[] allPrefabs = GameObject.FindGameObjectsWithTag(prefabTag);
+        float closestDistance = Mathf.Infinity;
+        GameObject closestPrefab = null;
 
         foreach (GameObject prefab in allPrefabs)
         {
             float distance = Mathf.Abs(prefab.transform.position.z);
-
-            if (distance < closestDistance1)
+            if (distance < closestDistance)
             {
-                closestDistance2 = closestDistance1;
-                selectedPrefab2 = selectedPrefab1;
-
-                closestDistance1 = distance;
-                selectedPrefab1 = prefab;
-            }
-            else if (distance < closestDistance2)
-            {
-                closestDistance2 = distance;
-                selectedPrefab2 = prefab;
+                closestDistance = distance;
+                closestPrefab = prefab;
             }
         }
+
+        return closestPrefab;
     }
 
-    // Método para realizar un input, calcular la distancia de tiempo y otorgar una puntuación
     public void PerformInputAndCalculateScore(GameObject selectedPrefab, AudioClip sound)
     {
         float closestDistance = Mathf.Abs(selectedPrefab.transform.position.z);
@@ -112,7 +98,6 @@ public class RailActivation : MonoBehaviour
         scoreMaster.UpdateScore(score);
     }
 
-    // Método para calcular la puntuación según la distancia al plano Z=0
     private int CalculateScore(float distance)
     {
         foreach (ScoreRange range in scoreRanges)
@@ -126,33 +111,33 @@ public class RailActivation : MonoBehaviour
         return 0; // Devolver 0 si no se encuentra ningún rango válido
     }
 
-    // Método para activar automáticamente los prefabs en el modo automático
     public void AutoActivatePrefab(GameObject prefab)
     {
-        float distance = Mathf.Abs(prefab.transform.position.z);
-        int score = CalculateScore(distance);
-        Debug.Log("Puntuación automática: " + score);
-
-        if (score > 0)
+        if (prefab.CompareTag(prefabTag1))
         {
-            if (prefab == selectedPrefab1)
-            {
-                PlaySound(sound1);
-            }
-            else if (prefab == selectedPrefab2)
-            {
-                PlaySound(sound2);
-            }
-
-            Destroy(prefab);
+            PerformInputAndCalculateScore(prefab, sound1);
         }
-
-        scoreMaster.UpdateScore(score);
+        else if (prefab.CompareTag(prefabTag2))
+        {
+            PerformInputAndCalculateScore(prefab, sound2);
+        }
     }
 
-    // Método para reproducir un sonido
     private void PlaySound(AudioClip clip)
     {
+        if (clip == null)
+        {
+            Debug.LogWarning("AudioClip is null!");
+            return;
+        }
+
+        if (audioSource == null)
+        {
+            Debug.LogWarning("AudioSource is null!");
+            return;
+        }
+
         audioSource.PlayOneShot(clip);
+        Debug.Log("Playing sound: " + clip.name);
     }
 }

@@ -5,6 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Prefab
+  - hitopen
+  - hitclose
+  - snare
+  - kick
+  - tom1
+  - tom2
+  - tom3
+  - crash
+  - ride
   layers:
   - Default
   - TransparentFX

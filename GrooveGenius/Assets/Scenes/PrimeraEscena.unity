@@ -165,12 +165,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a2e169c1a51d041b6807c74c8f8408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedPrefab1: {fileID: 407327633}
-  selectedPrefab2: {fileID: 0}
-  sound1: {fileID: 0}
+  prefabTag1: kick
+  prefabTag2: 
+  sound1: {fileID: 8300000, guid: dca098072f0a10e40abdbe3fd704e0bf, type: 3}
   sound2: {fileID: 0}
   scoreMaster: {fileID: 761751407}
-  isAutoMode: 0
+  isAutoMode: 1
   audioSource: {fileID: 1272305930}
   scoreRanges:
   - minDistance: -1
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85dc9a13d447244588c8abd3526c857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bpm: 90
+  bpm: 180
   spawnPoints:
   - {fileID: 0}
   - {fileID: 1661219851}
@@ -369,7 +369,7 @@ MonoBehaviour:
   - {fileID: 1161904072}
   - {fileID: 1670443198}
   - {fileID: 1354156690}
-  notesFile: {fileID: 4900000, guid: 9b195e7c6d55b644e8a2b724520c3360, type: 3}
+  notesFile: {fileID: 4900000, guid: ec84fd91f1e5fc243a3d0f295e4b531c, type: 3}
 --- !u!1 &238681547
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,12 +552,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a2e169c1a51d041b6807c74c8f8408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedPrefab1: {fileID: 1775121166}
-  selectedPrefab2: {fileID: 1791552823}
-  sound1: {fileID: 0}
-  sound2: {fileID: 8300000, guid: 2b21e89db01f143448f62ee48c294f3a, type: 3}
+  prefabTag1: snare
+  prefabTag2: tom1
+  sound1: {fileID: 8300000, guid: 623398f2df024724da08e900bb159071, type: 3}
+  sound2: {fileID: 8300000, guid: f3fdfcf9dd3343340bd41ca035cd8149, type: 3}
   scoreMaster: {fileID: 761751407}
-  isAutoMode: 0
+  isAutoMode: 1
   audioSource: {fileID: 1272305930}
   scoreRanges:
   - minDistance: -1
@@ -726,7 +726,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1140959240}
         m_TargetAssemblyTypeName: RailActivation, Assembly-CSharp
-        m_MethodName: OnActivation
+        m_MethodName: OnActivation2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -736,29 +736,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RailActivation, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_ActionId: 39d205d5-af9d-4257-a4fa-79eb2a31028e
     m_ActionName: Drum Config/HitHat_Open[/MidiDevice/note046]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1140959240}
+        m_TargetAssemblyTypeName: RailActivation, Assembly-CSharp
+        m_MethodName: OnActivation1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -784,13 +772,13 @@ MonoBehaviour:
     m_ActionName: Drum Config/Hit Pedal[/MidiDevice/note044]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 34784470}
+        m_TargetAssemblyTypeName: RailActivation, Assembly-CSharp
+        m_MethodName: OnActivation1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -800,13 +788,13 @@ MonoBehaviour:
     m_ActionName: Drum Config/Kick[/MidiDevice/note036]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 313594701}
+        m_TargetAssemblyTypeName: RailActivation, Assembly-CSharp
+        m_MethodName: OnActivation1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -816,13 +804,13 @@ MonoBehaviour:
     m_ActionName: Drum Config/Snare[/MidiDevice/note038]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 313594701}
+        m_TargetAssemblyTypeName: RailActivation, Assembly-CSharp
+        m_MethodName: OnActivation2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -832,13 +820,13 @@ MonoBehaviour:
     m_ActionName: Drum Config/Tom1[/MidiDevice/note048]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1335853900}
+        m_TargetAssemblyTypeName: RailActivation, Assembly-CSharp
+        m_MethodName: OnActivation1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -848,13 +836,13 @@ MonoBehaviour:
     m_ActionName: Drum Config/Tom2[/MidiDevice/note045]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1810493393}
+        m_TargetAssemblyTypeName: RailActivation, Assembly-CSharp
+        m_MethodName: OnActivation1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -864,13 +852,13 @@ MonoBehaviour:
     m_ActionName: Drum Config/Tom3[/MidiDevice/note043]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1335853900}
+        m_TargetAssemblyTypeName: RailActivation, Assembly-CSharp
+        m_MethodName: OnActivation2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -880,13 +868,13 @@ MonoBehaviour:
     m_ActionName: Drum Config/Crash[/MidiDevice/note049]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1810493393}
+        m_TargetAssemblyTypeName: RailActivation, Assembly-CSharp
+        m_MethodName: OnActivation2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -971,10 +959,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a2e169c1a51d041b6807c74c8f8408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedPrefab1: {fileID: 1661219850}
-  selectedPrefab2: {fileID: 238681547}
-  sound1: {fileID: 8300000, guid: 643499fa5462bb04998f56c405bf0a30, type: 3}
-  sound2: {fileID: 8300000, guid: 39ffc98fdbed3e841adfea42c3ad509c, type: 3}
+  prefabTag1: hitclose
+  prefabTag2: hitopen
+  sound1: {fileID: 8300000, guid: 209fa220bed08b9429b068381ab7ac81, type: 3}
+  sound2: {fileID: 8300000, guid: 5baada368baed584982902463881904d, type: 3}
   scoreMaster: {fileID: 761751407}
   isAutoMode: 1
   audioSource: {fileID: 1272305930}
@@ -1218,10 +1206,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a2e169c1a51d041b6807c74c8f8408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedPrefab1: {fileID: 1161904071}
-  selectedPrefab2: {fileID: 214715517}
-  sound1: {fileID: 0}
-  sound2: {fileID: 0}
+  prefabTag1: tom2
+  prefabTag2: crash
+  sound1: {fileID: 8300000, guid: 6afa809b1c8728241861693bbfa94a13, type: 3}
+  sound2: {fileID: 8300000, guid: 561b2c6e66bf59448a7fe859d3a8c9c6, type: 3}
   scoreMaster: {fileID: 761751407}
   isAutoMode: 1
   audioSource: {fileID: 1272305930}
@@ -1725,10 +1713,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a2e169c1a51d041b6807c74c8f8408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedPrefab1: {fileID: 1354156689}
-  selectedPrefab2: {fileID: 1670443197}
-  sound1: {fileID: 0}
-  sound2: {fileID: 0}
+  prefabTag1: tom3
+  prefabTag2: ride
+  sound1: {fileID: 8300000, guid: 60f126279980c5f4297ad40ec088e368, type: 3}
+  sound2: {fileID: 8300000, guid: f310067a9ef664c439eeb747d8249b90, type: 3}
   scoreMaster: {fileID: 761751407}
   isAutoMode: 1
   audioSource: {fileID: 1272305930}
@@ -1916,8 +1904,8 @@ SceneRoots:
   - {fileID: 1661219852}
   - {fileID: 238681549}
   - {fileID: 1775121168}
-  - {fileID: 407327635}
   - {fileID: 1791552825}
+  - {fileID: 407327635}
   - {fileID: 214715519}
   - {fileID: 1161904073}
   - {fileID: 1670443199}

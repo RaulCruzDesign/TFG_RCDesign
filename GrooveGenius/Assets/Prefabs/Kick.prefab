@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8298838302442874591}
   m_Layer: 0
   m_Name: Kick
-  m_TagString: Prefab
+  m_TagString: kick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
