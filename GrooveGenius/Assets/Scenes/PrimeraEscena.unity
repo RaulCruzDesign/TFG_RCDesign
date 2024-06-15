@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 34784471}
   - component: {fileID: 34784470}
-  - component: {fileID: 34784469}
   m_Layer: 0
   m_Name: Rail 2
   m_TagString: Untagged
@@ -141,18 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &34784469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34784468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab0db0787e40c048a2bbf16be7a0679, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &34784470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +157,7 @@ MonoBehaviour:
   sound1: {fileID: 8300000, guid: dca098072f0a10e40abdbe3fd704e0bf, type: 3}
   sound2: {fileID: 0}
   scoreMaster: {fileID: 761751407}
-  isAutoMode: 1
+  isAutoMode: 0
   audioSource: {fileID: 1272305930}
   scoreRanges:
   - minDistance: -1
@@ -369,7 +356,7 @@ MonoBehaviour:
   - {fileID: 1161904072}
   - {fileID: 1670443198}
   - {fileID: 1354156690}
-  notesFile: {fileID: 4900000, guid: ec84fd91f1e5fc243a3d0f295e4b531c, type: 3}
+  notesFile: {fileID: 4900000, guid: 9b195e7c6d55b644e8a2b724520c3360, type: 3}
 --- !u!1 &238681547
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +507,6 @@ GameObject:
   m_Component:
   - component: {fileID: 313594702}
   - component: {fileID: 313594701}
-  - component: {fileID: 313594700}
   m_Layer: 0
   m_Name: Rail 1
   m_TagString: Untagged
@@ -528,18 +514,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &313594700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313594699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab0db0787e40c048a2bbf16be7a0679, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &313594701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,12 +531,18 @@ MonoBehaviour:
   sound1: {fileID: 8300000, guid: 623398f2df024724da08e900bb159071, type: 3}
   sound2: {fileID: 8300000, guid: f3fdfcf9dd3343340bd41ca035cd8149, type: 3}
   scoreMaster: {fileID: 761751407}
-  isAutoMode: 1
+  isAutoMode: 0
   audioSource: {fileID: 1272305930}
   scoreRanges:
   - minDistance: -1
     maxDistance: 1
     score: 500
+  - minDistance: -1.5
+    maxDistance: 1.5
+    score: 200
+  - minDistance: -2
+    maxDistance: 2
+    score: 50
 --- !u!4 &313594702
 Transform:
   m_ObjectHideFlags: 0
@@ -924,7 +904,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1140959239}
   - component: {fileID: 1140959240}
-  - component: {fileID: 1140959241}
   m_Layer: 0
   m_Name: Rail 0
   m_TagString: Untagged
@@ -961,10 +940,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabTag1: hitclose
   prefabTag2: hitopen
-  sound1: {fileID: 8300000, guid: 209fa220bed08b9429b068381ab7ac81, type: 3}
+  sound1: {fileID: 8300000, guid: 1017f1f7d44c7e842a74160967df8cee, type: 3}
   sound2: {fileID: 8300000, guid: 5baada368baed584982902463881904d, type: 3}
   scoreMaster: {fileID: 761751407}
-  isAutoMode: 1
+  isAutoMode: 0
   audioSource: {fileID: 1272305930}
   scoreRanges:
   - minDistance: -1
@@ -976,18 +955,6 @@ MonoBehaviour:
   - minDistance: -2
     maxDistance: 2
     score: 50
---- !u!114 &1140959241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1140959238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab0db0787e40c048a2bbf16be7a0679, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1161904071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1106,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 1.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1174,7 +1141,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1335853901}
   - component: {fileID: 1335853900}
-  - component: {fileID: 1335853899}
   m_Layer: 0
   m_Name: Rail 3
   m_TagString: Untagged
@@ -1182,18 +1148,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1335853899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335853898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab0db0787e40c048a2bbf16be7a0679, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1335853900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1211,7 +1165,7 @@ MonoBehaviour:
   sound1: {fileID: 8300000, guid: 6afa809b1c8728241861693bbfa94a13, type: 3}
   sound2: {fileID: 8300000, guid: 561b2c6e66bf59448a7fe859d3a8c9c6, type: 3}
   scoreMaster: {fileID: 761751407}
-  isAutoMode: 1
+  isAutoMode: 0
   audioSource: {fileID: 1272305930}
   scoreRanges:
   - minDistance: -1
@@ -1681,7 +1635,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1810493394}
   - component: {fileID: 1810493393}
-  - component: {fileID: 1810493392}
   m_Layer: 0
   m_Name: Rail 4
   m_TagString: Untagged
@@ -1689,18 +1642,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1810493392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810493391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab0db0787e40c048a2bbf16be7a0679, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1810493393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,7 +1659,7 @@ MonoBehaviour:
   sound1: {fileID: 8300000, guid: 60f126279980c5f4297ad40ec088e368, type: 3}
   sound2: {fileID: 8300000, guid: f310067a9ef664c439eeb747d8249b90, type: 3}
   scoreMaster: {fileID: 761751407}
-  isAutoMode: 1
+  isAutoMode: 0
   audioSource: {fileID: 1272305930}
   scoreRanges:
   - minDistance: -1
