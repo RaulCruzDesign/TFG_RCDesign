@@ -1,26 +1,32 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 using System.Collections.Generic;
 
 public class RailActivation : MonoBehaviour
 {
-    public string prefabTag1; // Tag del primer tipo de prefab
-    public string prefabTag2; // Tag del segundo tipo de prefab
-    public AudioClip sound1; // Sonido correspondiente al prefab 1
-    public AudioClip sound2; // Sonido correspondiente al prefab 2
-    public ScoreMaster scoreMaster; // Referencia al script ScoreMaster
-    public bool isAutoMode; // Modo automático activado
-    public AudioSource audioSource; // Fuente de audio para reproducir los sonidos
+    public string prefabTag1;
+    public string prefabTag2;
+    public AudioClip sound1;
+    public AudioClip sound2;
+    public ScoreMaster scoreMaster;
+    public bool isAutoMode;
+    public AudioSource audioSource;
+    public GameObject[] scoreSprites;
+    public GameObject failSprite;
+
+    private int comboMultiplier = 1;
 
     [System.Serializable]
     public class ScoreRange
     {
-        public float minDistance; // Distancia mínima desde el prefab hasta Z=0
-        public float maxDistance; // Distancia máxima desde el prefab hasta Z=0
-        public int score; // Puntaje asociado
+        public float minDistance;
+        public float maxDistance;
+        public int score;
+        public int spriteIndex;
     }
 
-    public ScoreRange[] scoreRanges; // Rangos de distancia y puntajes
+    public ScoreRange[] scoreRanges;
 
     void Awake()
     {
@@ -86,16 +92,26 @@ public class RailActivation : MonoBehaviour
     {
         float closestDistance = Mathf.Abs(selectedPrefab.transform.position.z);
         int score = CalculateScore(closestDistance);
+        int scoreRangeIndex = GetScoreRangeIndex(closestDistance);
         Debug.Log("Puntuación: " + score);
 
         if (score > 0)
         {
             PlaySound(sound);
             Destroy(selectedPrefab);
+            score *= comboMultiplier;
+            comboMultiplier++;
+            scoreMaster.UpdateCombo(true, scoreRangeIndex);
+        }
+        else
+        {
+            comboMultiplier = 1;
+            ShowFailSprite();
+            scoreMaster.UpdateCombo(false, scoreRangeIndex);
         }
 
-        // Enviar el puntaje al script ScoreMaster
         scoreMaster.UpdateScore(score);
+        ShowScoreSprite(closestDistance);
     }
 
     private int CalculateScore(float distance)
@@ -104,11 +120,24 @@ public class RailActivation : MonoBehaviour
         {
             if (distance >= range.minDistance && distance <= range.maxDistance)
             {
-                return range.score; // Devolver el puntaje de este rango
+                return range.score;
             }
         }
 
-        return 0; // Devolver 0 si no se encuentra ningún rango válido
+        return 0;
+    }
+
+    private int GetScoreRangeIndex(float distance)
+    {
+        for (int i = 0; i < scoreRanges.Length; i++)
+        {
+            if (distance >= scoreRanges[i].minDistance && distance <= scoreRanges[i].maxDistance)
+            {
+                return i;
+            }
+        }
+
+        return -1; // Indica un fallo
     }
 
     public void AutoActivatePrefab(GameObject prefab)
@@ -139,5 +168,42 @@ public class RailActivation : MonoBehaviour
 
         audioSource.PlayOneShot(clip);
         Debug.Log("Playing sound: " + clip.name);
+    }
+
+    private void ShowScoreSprite(float distance)
+    {
+        foreach (ScoreRange range in scoreRanges)
+        {
+            if (distance >= range.minDistance && distance <= range.maxDistance)
+            {
+                if (range.spriteIndex >= 0 && range.spriteIndex < scoreSprites.Length)
+                {
+                    StartCoroutine(DisplaySprite(scoreSprites[range.spriteIndex]));
+                }
+                break;
+            }
+        }
+    }
+
+    private void ShowFailSprite()
+    {
+        if (failSprite != null)
+        {
+            StartCoroutine(DisplaySprite(failSprite));
+        }
+    }
+
+    private IEnumerator DisplaySprite(GameObject sprite)
+    {
+        sprite.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        sprite.SetActive(false);
+    }
+
+    public void ResetCombo()
+    {
+        comboMultiplier = 1;
+        ShowFailSprite();
+        scoreMaster.UpdateCombo(false, -1);
     }
 }

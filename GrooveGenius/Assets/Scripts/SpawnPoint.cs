@@ -3,9 +3,9 @@ using System.Collections;
 
 public class SpawnPoint : MonoBehaviour
 {
-    public GameObject prefabToSpawn; // Prefab que será instanciado
-    public float timeToReachZ0 = 5f; // Tiempo en segundos que tarda el prefab en llegar a Z=0
-    public RailActivation railActivation; // Referencia al script RailActivation
+    public GameObject prefabToSpawn;
+    public float timeToReachZ0 = 5f;
+    public RailActivation railActivation;
 
     void Start()
     {
@@ -53,6 +53,7 @@ public class SpawnPoint : MonoBehaviour
 
         if (spawnedPrefab != null)
         {
+            railActivation.ResetCombo();
             Destroy(spawnedPrefab);
         }
     }
