@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class SpawnController : MonoBehaviour
 {
     public float bpm = 120f; // BPM de la música
+    public float division = 4; // BPM de la música
     public List<SpawnPoint> spawnPoints; // Lista de spawn points
     public TextAsset notesFile; // Archivo de notas asignado desde el editor
 
@@ -81,7 +82,7 @@ public class SpawnController : MonoBehaviour
                 }
 
                 // Espera la mitad del tiempo entre beats para las secciones de 16 notas
-                yield return new WaitForSeconds(secondsPerBeat / 2);
+                yield return new WaitForSeconds(secondsPerBeat / division);
             }
         }
     }
