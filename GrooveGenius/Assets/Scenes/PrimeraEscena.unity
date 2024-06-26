@@ -1533,6 +1533,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1078687191}
+        m_TargetAssemblyTypeName: CambioMaterial, Assembly-CSharp
+        m_MethodName: CambiarAlPrimerMaterial
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: c1b13e4c-95d9-442d-9c38-49883f1ca244
     m_ActionName: Drum Config/Snare[/MidiDevice/note038]
   - m_PersistentCalls:
@@ -1541,6 +1553,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: RailActivation, Assembly-CSharp
         m_MethodName: OnActivation2
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1078687191}
+        m_TargetAssemblyTypeName: CambioMaterial, Assembly-CSharp
+        m_MethodName: CambiarAlSegundoMaterial
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1565,6 +1589,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1350797031}
+        m_TargetAssemblyTypeName: CambioMaterial, Assembly-CSharp
+        m_MethodName: CambiarAlPrimerMaterial
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: a7af096c-9bd5-4c04-ac93-a729ff7c48ed
     m_ActionName: Drum Config/Tom2[/MidiDevice/note045]
   - m_PersistentCalls:
@@ -1573,6 +1609,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: RailActivation, Assembly-CSharp
         m_MethodName: OnActivation1
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 858815284}
+        m_TargetAssemblyTypeName: CambioMaterial, Assembly-CSharp
+        m_MethodName: CambiarAlPrimerMaterial
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1597,6 +1645,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1350797031}
+        m_TargetAssemblyTypeName: CambioMaterial, Assembly-CSharp
+        m_MethodName: CambiarAlSegundoMaterial
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 280a16bb-166a-418e-b0c4-400e2f51812b
     m_ActionName: Drum Config/Crash[/MidiDevice/note049]
   - m_PersistentCalls:
@@ -1605,6 +1665,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: RailActivation, Assembly-CSharp
         m_MethodName: OnActivation2
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 858815284}
+        m_TargetAssemblyTypeName: CambioMaterial, Assembly-CSharp
+        m_MethodName: CambiarAlSegundoMaterial
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1798,8 +1870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f87534a29d8c0479b66f437e980529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primerMaterial: {fileID: 0}
-  segundoMaterial: {fileID: 0}
+  primerMaterial: {fileID: 2100000, guid: 49270c34a2d0029428252b272e6abe1d, type: 2}
+  segundoMaterial: {fileID: 2100000, guid: 853c916ca2e3aeb41b5e78bd1964b024, type: 2}
   duracionCambio: 2
 --- !u!1 &933681348
 GameObject:
@@ -2015,6 +2087,7 @@ GameObject:
   - component: {fileID: 1078687189}
   - component: {fileID: 1078687188}
   - component: {fileID: 1078687187}
+  - component: {fileID: 1078687191}
   m_Layer: 0
   m_Name: InpR1
   m_TagString: Untagged
@@ -2108,6 +2181,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1078687191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078687186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f87534a29d8c0479b66f437e980529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primerMaterial: {fileID: 2100000, guid: 961cbe7457b69c94d91922d385109fb1, type: 2}
+  segundoMaterial: {fileID: 2100000, guid: c5665877249f8c045891d331a2b2ca23, type: 2}
+  duracionCambio: 2
 --- !u!1 &1140959238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,8 +2628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f87534a29d8c0479b66f437e980529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primerMaterial: {fileID: 0}
-  segundoMaterial: {fileID: 0}
+  primerMaterial: {fileID: 2100000, guid: 7d766a584676b5a4eb8449edf0432f35, type: 2}
+  segundoMaterial: {fileID: 2100000, guid: 2f51b8fe70ea2a94da3cc841fca69689, type: 2}
   duracionCambio: 2
 --- !u!1 &1354156689
 GameObject:
