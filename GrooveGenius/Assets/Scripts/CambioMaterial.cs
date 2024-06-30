@@ -1,26 +1,28 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class CambioMaterial : MonoBehaviour
 {
-    public Material primerMaterial;   // Primer material a aplicar
-    public Material segundoMaterial;  // Segundo material a aplicar
-    public float duracionCambio = 2.0f;  // Duración en segundos para cada cambio de material
+    public Material primerMaterial;
+    public Material segundoMaterial;
+    public float duracionCambio = 2.0f;
 
-    private Renderer rend;  // Referencia al renderer del objeto
+    private Renderer rend;
+    private Coroutine materialCoroutine;
+    private Queue<Material> materialQueue = new Queue<Material>();
 
     private void Start()
     {
-        rend = GetComponent<Renderer>();  // Obtener el renderer del objeto al que está adjunto este script
+        rend = GetComponent<Renderer>();
     }
 
-    // Estas funciones serán asignadas a eventos del nuevo sistema de inputs
     public void CambiarAlPrimerMaterial(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            StartCoroutine(CambiarMaterialTemporariamente(primerMaterial));
+            EnqueueMaterial(primerMaterial);
         }
     }
 
@@ -28,22 +30,35 @@ public class CambioMaterial : MonoBehaviour
     {
         if (context.performed)
         {
-            StartCoroutine(CambiarMaterialTemporariamente(segundoMaterial));
+            EnqueueMaterial(segundoMaterial);
         }
     }
 
-    private IEnumerator CambiarMaterialTemporariamente(Material nuevoMaterial)
+    private void EnqueueMaterial(Material nuevoMaterial)
     {
-        // Guardar el material original
-        Material materialOriginal = rend.material;
+        materialQueue.Enqueue(nuevoMaterial);
 
-        // Aplicar el nuevo material
-        rend.material = nuevoMaterial;
+        if (materialCoroutine == null)
+        {
+            materialCoroutine = StartCoroutine(ProcessMaterialQueue());
+        }
+    }
 
-        // Esperar la duración del cambio
-        yield return new WaitForSeconds(duracionCambio);
+    private IEnumerator ProcessMaterialQueue()
+    {
+        while (materialQueue.Count > 0)
+        {
+            Material nuevoMaterial = materialQueue.Dequeue();
 
-        // Restaurar el material original
-        rend.material = materialOriginal;
+            Material materialOriginal = rend.material;
+
+            rend.material = nuevoMaterial;
+
+            yield return new WaitForSeconds(duracionCambio);
+
+            rend.material = materialOriginal;
+        }
+
+        materialCoroutine = null;
     }
 }

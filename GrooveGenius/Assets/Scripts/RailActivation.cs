@@ -14,6 +14,7 @@ public class RailActivation : MonoBehaviour
     public AudioSource audioSource;
     public GameObject[] scoreSprites;
     public GameObject failSprite;
+    public ParticleSystem hitParticleSystem;
 
     private int comboMultiplier = 1;
 
@@ -39,18 +40,28 @@ public class RailActivation : MonoBehaviour
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
+
+        if (hitParticleSystem == null)
+        {
+            Debug.LogWarning("ParticleSystem is not assigned!");
+        }
     }
 
     public void OnActivation1()
     {
         if (!isAutoMode)
         {
-            Debug.Log("Hit 1");
             GameObject selectedPrefab1 = FindClosestPrefab(prefabTag1);
 
             if (selectedPrefab1 != null)
             {
-                PerformInputAndCalculateScore(selectedPrefab1, sound1);
+                float closestDistance = Mathf.Abs(selectedPrefab1.transform.position.z);
+                int scoreRangeIndex = GetScoreRangeIndex(closestDistance);
+
+                if (scoreRangeIndex != -1)
+                {
+                    PerformInputAndCalculateScore(selectedPrefab1, sound1);
+                }
             }
         }
     }
@@ -59,12 +70,17 @@ public class RailActivation : MonoBehaviour
     {
         if (!isAutoMode)
         {
-            Debug.Log("Hit 2");
             GameObject selectedPrefab2 = FindClosestPrefab(prefabTag2);
 
             if (selectedPrefab2 != null)
             {
-                PerformInputAndCalculateScore(selectedPrefab2, sound2);
+                float closestDistance = Mathf.Abs(selectedPrefab2.transform.position.z);
+                int scoreRangeIndex = GetScoreRangeIndex(closestDistance);
+
+                if (scoreRangeIndex != -1)
+                {
+                    PerformInputAndCalculateScore(selectedPrefab2, sound2);
+                }
             }
         }
     }
@@ -93,11 +109,11 @@ public class RailActivation : MonoBehaviour
         float closestDistance = Mathf.Abs(selectedPrefab.transform.position.z);
         int score = CalculateScore(closestDistance);
         int scoreRangeIndex = GetScoreRangeIndex(closestDistance);
-        Debug.Log("Puntuación: " + score);
 
         if (score > 0)
         {
             PlaySound(sound);
+            PlayHitParticleSystem(selectedPrefab.transform.position);
             Destroy(selectedPrefab);
             score *= comboMultiplier;
             comboMultiplier++;
@@ -105,8 +121,6 @@ public class RailActivation : MonoBehaviour
         }
         else
         {
-            comboMultiplier = 1;
-            ShowFailSprite();
             scoreMaster.UpdateCombo(false, scoreRangeIndex);
         }
 
@@ -137,7 +151,7 @@ public class RailActivation : MonoBehaviour
             }
         }
 
-        return -1; // Indica un fallo
+        return -1;
     }
 
     public void AutoActivatePrefab(GameObject prefab)
@@ -167,7 +181,22 @@ public class RailActivation : MonoBehaviour
         }
 
         audioSource.PlayOneShot(clip);
-        Debug.Log("Playing sound: " + clip.name);
+    }
+
+    private void PlayHitParticleSystem(Vector3 position)
+    {
+        if (hitParticleSystem != null)
+        {
+            hitParticleSystem.transform.position = position;
+            hitParticleSystem.Play();
+            StartCoroutine(StopHitParticleSystem());
+        }
+    }
+
+    private IEnumerator StopHitParticleSystem()
+    {
+        yield return new WaitForSeconds(0.1f);
+        hitParticleSystem.Stop();
     }
 
     private void ShowScoreSprite(float distance)
